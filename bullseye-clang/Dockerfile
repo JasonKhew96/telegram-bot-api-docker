@@ -17,6 +17,10 @@ RUN git clone --recursive https://github.com/tdlib/telegram-bot-api.git && \
 # distroless
 FROM gcr.io/distroless/cc-debian11
 
+# clang
+COPY --from=builder /usr/lib/llvm-11/lib/libc++.so.1 /usr/lib/llvm-11/lib/libc++.so.1.0 /usr/lib/llvm-11/lib/
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libc++.so.1 /usr/lib/x86_64-linux-gnu/libc++.so.1.0 /usr/lib/x86_64-linux-gnu/
+
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/x86_64-linux-gnu/libz.so.1
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libcrypto.so.1
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libssl.so.1
