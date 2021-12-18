@@ -11,7 +11,8 @@ RUN git clone --recursive https://github.com/c0re100/husky-bot-api.git && \
     mkdir build && \
     cd build && \
     CXXFLAGS="-stdlib=libc++" CC=/usr/bin/clang CXX=/usr/bin/clang++ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr/local .. && \
-    cmake --build . --target install -j 2
+    cmake --build . --target install -j 2 && \
+    strip /usr/local/bin/telegram-bot-api
 
 # distroless
 FROM gcr.io/distroless/cc-debian11

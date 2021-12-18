@@ -11,7 +11,8 @@ RUN git clone --recursive https://github.com/tdlib/telegram-bot-api.git && \
     mkdir build && \
     cd build && \
     cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr/local .. && \
-    cmake --build . --target install -j 2
+    cmake --build . --target install -j 2 && \
+    strip /usr/local/bin/telegram-bot-api
 
 # distroless
 FROM gcr.io/distroless/cc-debian11
