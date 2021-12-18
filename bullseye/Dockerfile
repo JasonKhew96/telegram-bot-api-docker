@@ -16,9 +16,9 @@ RUN git clone --recursive https://github.com/tdlib/telegram-bot-api.git && \
 # distroless
 FROM gcr.io/distroless/cc-debian11
 
-COPY --from=builder /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/x86_64-linux-gnu/libz.so
-COPY --from=builder /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libcrypto.so
-COPY --from=builder /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libssl.so
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/x86_64-linux-gnu/libz.so.1
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libcrypto.so.1
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libssl.so /usr/lib/x86_64-linux-gnu/libssl.so.1
 COPY --from=builder /usr/local/bin/telegram-bot-api /usr/local/bin/telegram-bot-api
 
 ENTRYPOINT [ "/usr/local/bin/telegram-bot-api" ]
