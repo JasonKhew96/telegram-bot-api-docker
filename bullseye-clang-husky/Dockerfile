@@ -6,7 +6,7 @@ WORKDIR /
 RUN apt-get update && apt-get upgrade -y && apt-get -y install make git zlib1g-dev libssl-dev gperf cmake clang libc++-dev libc++abi-dev
 
 RUN git clone --recursive https://github.com/c0re100/husky-bot-api.git && \
-    cd telegram-bot-api && \
+    cd husky-bot-api && \
     git checkout 580d88ef44beb7bcf681ea313292d02f36cb6d5e && \
     mkdir build && \
     cd build && \
