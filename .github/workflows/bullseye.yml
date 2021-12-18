@@ -1,4 +1,4 @@
-name: Docker Alpine
+name: Docker Bullseye
 on:
   push:
     tags:
@@ -22,7 +22,7 @@ jobs:
           flavor: |
             latest=auto
             prefix=
-            suffix=-alpine-husky
+            suffix=-bullseye
           images: |
             jasonkhew96/telegram-bot-api
             ghcr.io/jasonkhew96/telegram-bot-api
@@ -43,7 +43,7 @@ jobs:
       - name: Build container image
         uses: docker/build-push-action@v2
         with:
-          context: alpine-husky
+          context: bullseye
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

@@ -1,4 +1,4 @@
-name: Docker Alpine
+name: Docker Bullseye Clang
 on:
   push:
     tags:
@@ -20,9 +20,9 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           flavor: |
-            latest=auto
+            latest=false
             prefix=
-            suffix=-alpine
+            suffix=-bullseye-clang-husky
           images: |
             jasonkhew96/telegram-bot-api
             ghcr.io/jasonkhew96/telegram-bot-api
@@ -43,7 +43,7 @@ jobs:
       - name: Build container image
         uses: docker/build-push-action@v2
         with:
-          context: alpine
+          context: bullseye-clang-husky
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

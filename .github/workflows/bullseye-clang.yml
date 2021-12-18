@@ -1,4 +1,4 @@
-name: Docker Buster
+name: Docker Bullseye Clang
 on:
   push:
     tags:
@@ -22,7 +22,7 @@ jobs:
           flavor: |
             latest=false
             prefix=
-            suffix=-buster-husky
+            suffix=-bullseye-clang
           images: |
             jasonkhew96/telegram-bot-api
             ghcr.io/jasonkhew96/telegram-bot-api
@@ -43,7 +43,7 @@ jobs:
       - name: Build container image
         uses: docker/build-push-action@v2
         with:
-          context: buster-husky
+          context: bullseye-clang
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
