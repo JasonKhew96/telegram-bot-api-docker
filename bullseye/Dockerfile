@@ -3,7 +3,7 @@ FROM debian:bullseye as builder
 
 WORKDIR /
 
-RUN apt-get install make git zlib1g-dev libssl-dev gperf cmake g++
+RUN apt-get update && apt-get upgrade -y && apt-get -y install make git zlib1g-dev libssl-dev gperf cmake g++
 
 RUN git clone --recursive https://github.com/tdlib/telegram-bot-api.git && \
     cd telegram-bot-api && \
