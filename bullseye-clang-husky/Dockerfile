@@ -22,6 +22,7 @@ COPY --from=builder /usr/lib/llvm-11/lib/libc++.so.1 /usr/lib/llvm-11/lib/libc++
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libc++.so.1 /usr/lib/x86_64-linux-gnu/libc++.so.1.0 /usr/lib/x86_64-linux-gnu/
 COPY --from=builder /usr/lib/llvm-11/lib/libc++abi.so.1 /usr/lib/llvm-11/lib/libc++abi.so.1.0 /usr/lib/llvm-11/lib/
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libc++abi.so.1 /usr/lib/x86_64-linux-gnu/libc++abi.so.1.0 /usr/lib/x86_64-linux-gnu/
+COPY --from=builder /usr/lib/x86_64-linux-gnu/libatomic.so.1 /usr/lib/x86_64-linux-gnu/libatomic.so.1.2.0 /usr/lib/x86_64-linux-gnu/
 
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/x86_64-linux-gnu/libz.so.1
 COPY --from=builder /usr/lib/x86_64-linux-gnu/libcrypto.so /usr/lib/x86_64-linux-gnu/libcrypto.so.1
