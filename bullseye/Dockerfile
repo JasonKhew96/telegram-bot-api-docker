@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get -y install make git zlib1g-d
 
 RUN git clone --recursive https://github.com/tdlib/telegram-bot-api.git && \
     cd telegram-bot-api && \
-    git checkout a3ba6536900e4fddb305790bd6481d59ca2284cf && \
+    git checkout b75e6b43cde0c1269baeb52f25ae6d0b59d9fdfb && \
     mkdir build && \
     cd build && \
     cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr/local .. && \
