@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get -y install make git zlib1g-d
 
 RUN git clone --recursive https://github.com/c0re100/husky-bot-api.git && \
     cd husky-bot-api && \
-    git checkout 2c2ec162ee0a33eacf4539fd162ab2e2883c7420 && \
+    git checkout 571baeead026fd6c671e00d6c5cf76d2bdf8eeb1 && \
     mkdir build && \
     cd build && \
     CXXFLAGS="-stdlib=libc++" CC=/usr/bin/clang CXX=/usr/bin/clang++ cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr/local .. && \
