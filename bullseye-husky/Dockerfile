@@ -7,7 +7,7 @@ RUN apt-get update && apt-get upgrade -y && apt-get -y install make git zlib1g-d
 
 RUN git clone --recursive https://github.com/c0re100/husky-bot-api.git && \
     cd husky-bot-api && \
-    git checkout 8d45b100f71b081e1bf1aa6b873297159eab7526 && \
+    git checkout 6c440a4f93f111f3432e4fdf5fbb7f67af00622b && \
     mkdir build && \
     cd build && \
     cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX:PATH=/usr/local .. && \
